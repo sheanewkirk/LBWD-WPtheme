@@ -158,5 +158,8 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-
-
+/**
+ * Limit Post Revisions
+ */
+if (!defined('WP_POST_REVISIONS')) define('WP_POST_REVISIONS', 10);
+if (!defined('WP_POST_REVISIONS')) define('WP_POST_REVISIONS', false);
