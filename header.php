@@ -25,9 +25,8 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img">
             </a>
 		</div><!-- .site-branding -->
-
+		<button class="menu-toggle left-toggle" aria-controls="primary-menu" aria-expanded="false"></button>			
 		<nav id="site-navigation" class="main-navigation left-menu-container">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
