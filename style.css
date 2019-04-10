@@ -465,7 +465,6 @@ a:hover, a:active {
 }
 
 .main-navigation ul {
-	display: none;
 	list-style: none;
 	margin: 0;
 	padding: 25px 0 0 0;
@@ -575,49 +574,97 @@ button.menu-toggle:hover  {
 }
 
 
+.left-menu-toggle {
+	
+		position:fixed;
+		display:block;
+		left:5%;
+		z-index:9999;
+		cursor: pointer;
+		background:url(img/mobile-menu.png) no-repeat center center;
+		width: 40px;
+		height:36px;
+		margin:10px auto;
+		text-align:center;
+		padding: 10px;
+		overflow: hidden;
+		border:none;
+	
+	}
 .left-menu {
 	position:fixed;
 	top:0;
-	transition:left .5s ease-in;
-	background:#f3f3f3;
-	width:90%;
-    height:100%;
+	width:.001px;
+	left:2000px;
+	transition:left .2s ease-in;
+	background:#333;
+	color:#fff;
+  height:100%;
+	z-index:9999;
+	overflow-x:scroll;
 }
+
+.left-menu .menu {
+	display:none;
+}
+.left-menu ul li a {
+		color:#fff;
+		background:#333;
+		font-size:30px;
+		word-break: break-word;
+		margin:0px;
+		line-height: 1;
+		padding: 37px 12px;
+	}
+	
+	.left-menu ul li ul li a {
+	
+		text-transform: capitalize;
+		font-size:30px;
+		padding: 37px 15px;
+	
+	}
+.left-menu::-webkit-scrollbar {
+	display: none;
+	}
+.left-menu .sub-menu-arrow {
+	color:#fff;
+}
+.left-menu ul li {background:none;}
 .sub-menu-arrow {
+	display:block;
 	transform:rotate(180deg);
 	transform-origin: center;
 	transition:.2s ease-in;	
 	position:absolute;
-    font-size:36px;
-    top:14px;
-    right:15px;
-    color:#444;
-    width:36px;
-    font-weight:bold;
+	font-size:48px;
+	top:14px;
+	right:24px;
+
 }
+
 .open-arrow {
+
 	transform:rotate(0deg);
 	transform-origin: center;
 	transition:.2s ease-in;
-	width:10px;
-	font-size:36px;
-    position:absolute;
-    top:14px;
-    right:34px;
-    font-weight:bold;
+	position:absolute;
+
 }
 
 .left-menu-close {
+		display:block;
     background:transparent;
     position:absolute;
-    right:0px;
-    z-index:9999999;
-    color:#444;
-    font-weight:bold;
+    left:0px;
+		z-index:9999999;
+		color: #fff;
+    font-size: 36px;
+    top: 4px;
 
 }
 
-button.left-menu-close {padding:.45em .7em;margin:0 0 15px;font-size:150%;}
+
 
 @media screen and (min-width: 67.5em) {
     
@@ -626,7 +673,7 @@ button.left-menu-close {padding:.45em .7em;margin:0 0 15px;font-size:150%;}
 	}
     
     .main-navigation a {
-        font-weight: bold;
+    font-weight: bold;
     font-size:1.9rem;
 
     }
@@ -635,8 +682,7 @@ button.left-menu-close {padding:.45em .7em;margin:0 0 15px;font-size:150%;}
 	}
     
     .main-navigation li {
-	float: left;
-	position: relative;
+		position: relative;
     display: inline-block;
     }
     
@@ -675,12 +721,6 @@ button.left-menu-close {padding:.45em .7em;margin:0 0 15px;font-size:150%;}
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
         left: auto;
-    }
-
-    .main-navigation li {
-        float: left;
-        position: relative;
-        background: transparent;
     }
     
     .sub-menu-arrow {display:none;}
