@@ -7,6 +7,10 @@
  * @package LBWD_Starter_2018
  */
 
+ // CUSTOM FUNCTIONS
+	// ==================================================
+	require_once get_template_directory() . '/inc/custom-functions.php';
+
 if ( ! function_exists( 'lbwd_starter_2018_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -125,16 +129,15 @@ add_action( 'widgets_init', 'lbwd_starter_2018_widgets_init' );
  */
 function lbwd_starter_2018_scripts() {
 	wp_enqueue_style( 'lbwd-starter-2018-style', get_stylesheet_uri() );
-    
-    wp_enqueue_style('animatecss', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css');
-    
-    wp_enqueue_style('fontawesomecss', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css');
-    
-	wp_enqueue_script( 'lbwd-starter-2018-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
+  wp_enqueue_style('animatecss', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css');
+  wp_enqueue_style('fontawesomecss', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+	wp_enqueue_style( 'bootstrap-grid', get_template_directory_uri() . '/css/bootstrap-grid.min.css', false, '1.0', 'all' );
+	wp_enqueue_style( 'custom', get_template_directory_uri() . '/css/custom.css', false, '1.0', 'all' );
 
+	wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array(), '20151215', true );
+	wp_enqueue_script( 'lbwd-starter-2018-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'lbwd-starter-2018-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-    
-    wp_enqueue_script('wowjs', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js', array(), '', true);
+  wp_enqueue_script('wowjs', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js', array(), '', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -178,3 +181,20 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if (!defined('WP_POST_REVISIONS')) define('WP_POST_REVISIONS', 10);
 if (!defined('WP_POST_REVISIONS')) define('WP_POST_REVISIONS', false);
+
+/**
+ * Gets Rid of Uncategorized Category
+ */
+ add_filter( 'get_terms', 'ts_get_subcategory_terms', 10, 3 );
+ function ts_get_subcategory_terms( $terms, $taxonomies, $args ) {
+ $new_terms = array();
+ // if it is a product category and on the shop page
+ if ( in_array( 'product_cat', $taxonomies ) && is_front_page()) {
+ foreach( $terms as $key => $term ) {
+ if ( !in_array( $term->slug, array('uncategorized') ) ) { //pass the slug name here
+ $new_terms[] = $term;
+ }}
+ $terms = $new_terms;
+ }
+ return $terms;
+ }
