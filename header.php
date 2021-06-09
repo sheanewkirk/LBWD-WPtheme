@@ -20,12 +20,13 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'lbwd-starter-2018' ); ?></a>
 
 	<header id="masthead" class="site-header">
+		<!-- <a class="header-phone" href="tel:<?php echo get_option('phonelink_url');?>"><?php echo get_option('phone_url');?></a> -->
 		<div class="site-branding">
             <a href="<?php echo home_url(); ?>">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img">
             </a>
 		</div><!-- .site-branding -->
-		<button class="menu-toggle left-toggle" aria-controls="primary-menu" aria-expanded="false"></button>			
+		<button class="menu-toggle left-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
 		<nav id="site-navigation" class="main-navigation left-menu-container">
 			<?php
 			wp_nav_menu( array(
@@ -35,5 +36,3 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
-	
