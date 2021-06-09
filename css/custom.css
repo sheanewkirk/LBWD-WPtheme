@@ -1,1 +1,34 @@
+/* Breakpoints */
+@media all and (max-width: 67.5em){
 
+}
+
+@media all and (max-width: 1800px){
+
+}
+
+@media all and (max-width: 1600px){
+
+}
+
+@media all and (max-width: 1400px){
+
+}
+
+@media all and (max-width: 1200px){
+
+}
+
+@media all and (max-width: 992px){
+
+}
+
+@media all and (max-width: 768px){
+
+}
+
+@media all and (max-width: 576px){
+  .alignright,.alignleft{padding-bottom: 20px;}
+  .logo-img{width: 70%;float: right;}
+  .left-toggle{float: left;}
+}
