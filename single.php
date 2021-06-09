@@ -7,9 +7,9 @@
  * @package LBWD_Starter_2018
  */
 
-get_header();
-?>
+get_header();?>
 
+<div class="container">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -30,7 +30,7 @@ get_header();
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+</div>
 
 <?php
-get_sidebar();
 get_footer();
