@@ -1,4 +1,4 @@
-<?php
+<?php /* Template Name: Default Template 1 */
 /**
  * The template for displaying all pages
  *
@@ -15,7 +15,8 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+<div class="container">
+	<div id="primary" class="content-area-full">
 		<main id="main" class="site-main">
 
 		<?php
@@ -34,7 +35,7 @@ get_header();
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+</div>
 
 <?php
-get_sidebar();
 get_footer();
