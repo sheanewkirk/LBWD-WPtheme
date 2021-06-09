@@ -201,10 +201,10 @@ a:hover, a:active {
 
 
 /*--------------------------------------------------------------
-# Content 
+# Content
 --------------------------------------------------------------*/
 
-.site {	
+.site {
     display: grid;
     grid-gap: 1.25em;
     grid-template-columns: 1fr;
@@ -254,8 +254,8 @@ a:hover, a:active {
 
 
 
-@media screen and (min-width: 67.5em) {
-    
+@media screen and (min-width: 992px) {
+
     .site {
     grid-template-columns: 1fr minmax(50rem, 85rem) minmax(20rem, 30rem)  1fr;
     grid-template-areas:
@@ -264,36 +264,36 @@ a:hover, a:active {
         "full full full full ";
     margin:0 auto;
     }
-    
+
     .site-header  {
     grid-column: main;
-    
+
     padding: 10px;
-        
+
     }
     .content-area {
     grid-column: content;
     }
-    
+
     .content-area-full {
     grid-column:main;
     padding:0;
     }
-    
+
     .widget-area {
     grid-column: sidebar;
     }
-    
+
     .site-footer {
     grid-column:full;
     }
-    
+
     .site-branding {
     display:inline-block;
     margin:0;
-    padding:0;    
+    padding:0;
     }
-    
+
     .content-area {
     padding-top:0;
     }
@@ -349,7 +349,7 @@ a:hover, a:active {
 	padding: 15px;
 	margin-bottom:10px;
 	text-align: left;
-    
+
 }
 .testimonial-name::before {
 	content: '';
@@ -384,7 +384,7 @@ a:hover, a:active {
 	display: none;
 }
 
-.entry-title {margin:0;}
+.entry-title {margin:0;padding: 30px 0;}
 
 .entry-footer, .entry-meta {
     margin:10px 10px 10px 15px;
@@ -407,7 +407,7 @@ a:hover, a:active {
 }
 
 .entry-thumbnail {
-    
+
     text-align:center;
 }
 
@@ -430,8 +430,8 @@ a:hover, a:active {
 	margin: 0 0 1.5em;
 }
 
-@media screen and (min-width: 67.5em) {
-    
+@media screen and (min-width: 992px) {
+
 .testimonial-img {
     margin:10px 20px 0 0;
     display:inline-block;
@@ -443,7 +443,7 @@ a:hover, a:active {
     font-style: italic;
 
 }
-    
+
 }
 
 
@@ -575,7 +575,7 @@ button.menu-toggle:hover  {
 
 
 .left-menu-toggle {
-	
+
 		position:fixed;
 		display:block;
 		left:5%;
@@ -589,7 +589,7 @@ button.menu-toggle:hover  {
 		padding: 10px;
 		overflow: hidden;
 		border:none;
-	
+
 	}
 .left-menu {
 	position:fixed;
@@ -616,13 +616,13 @@ button.menu-toggle:hover  {
 		line-height: 1;
 		padding: 37px 12px;
 	}
-	
+
 	.left-menu ul li ul li a {
-	
+
 		text-transform: capitalize;
 		font-size:30px;
 		padding: 37px 15px;
-	
+
 	}
 .left-menu::-webkit-scrollbar {
 	display: none;
@@ -635,7 +635,7 @@ button.menu-toggle:hover  {
 	display:block;
 	transform:rotate(180deg);
 	transform-origin: center;
-	transition:.2s ease-in;	
+	transition:.2s ease-in;
 	position:absolute;
 	font-size:48px;
 	top:14px;
@@ -666,12 +666,12 @@ button.menu-toggle:hover  {
 
 
 
-@media screen and (min-width: 67.5em) {
-    
+@media screen and (min-width: 992px) {
+
 	.menu-toggle {
 		display: none;
 	}
-    
+
     .main-navigation a {
     font-weight: bold;
     font-size:1.9rem;
@@ -680,18 +680,18 @@ button.menu-toggle:hover  {
 	.main-navigation ul {
 		display: block;
 	}
-    
+
     .main-navigation li {
 		position: relative;
     display: inline-block;
     }
-    
+
     .menu-main-menu-container {
     display:inline-block;
     }
 
     .main-navigation ul ul {
-        
+
         float: left;
         position: absolute;
         top: 100%;
@@ -722,7 +722,7 @@ button.menu-toggle:hover  {
     .main-navigation ul li.focus > ul {
         left: auto;
     }
-    
+
     .sub-menu-arrow {display:none;}
 }
 
