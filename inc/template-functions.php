@@ -222,16 +222,6 @@ add_action('init', 'lbwd_starter_2018_pagination'); // Add our default Paginatio
 
 
 /**
- * Font Awesome
- */
-
-//enqueues our external font awesome stylesheet
-function enqueue_our_required_stylesheets(){
-	wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.6.1/css/all.css'); 
-}
-add_action('wp_enqueue_scripts','enqueue_our_required_stylesheets');
-
-/**
  * Disable XMLRPC.php features
  */
 
